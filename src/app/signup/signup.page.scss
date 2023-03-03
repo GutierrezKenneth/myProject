@@ -1,0 +1,70 @@
+ion-content {
+    //--background: linear-gradient(180deg, #4F9B24 25%, #fff 75%);
+    --background: none;
+    background-image: url('/assets/images/bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+h1{
+    color: #5D9C59;
+    margin-top: 15%;
+    margin-left: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    font-family: cursive;
+}
+h3{
+  color: black;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.div-info{
+  margin-top: 15%;
+  height: 50px;
+  position: relative;
+}
+
+
+ion-input{
+  text-indent: 10px;
+color: #5D9C59;
+border: 1px solid black;
+height: 50px;
+margin-bottom: 5px;
+width: 300px;
+margin-left: 35PX;
+background-color: rgba(246, 246, 246, 0.497);
+border-radius: 10px;
+}
+
+
+ion-button {
+  margin-left: 35PX;
+  width: 300px;
+  height: 30px;
+  --background: #93e9be;
+  --background-hover: #93e9be;
+  --background-activated: #93e9be;
+  --background-focused: #93e9be;
+
+  --color: rgb(255, 255, 255);
+
+  --border-color: #93e9be;
+  --border-style: solid;
+  --border-width: 1px;
+
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+
+  --ripple-color: deeppink;
+
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+.appName{
+    text-align: center;
+  }
