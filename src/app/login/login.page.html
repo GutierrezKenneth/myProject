@@ -9,8 +9,8 @@
 
 <div class="div-info">
     
-    <ion-input placeholder="Username:"></ion-input>
-    <ion-input placeholder="Password:" type="Password"></ion-input>
+    <ion-input placeholder="Username" type="text" [(ngModel)]="username"></ion-input>
+    <ion-input placeholder="Password:" type="Password" [(ngModel)]="password"></ion-input>
      
     <ion-button expand="block" (click)="logIn()">Log In</ion-button>
     <ion-button expand="block" (click)="signUp()" color="light">Sign Up</ion-button>

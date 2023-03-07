@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -7,16 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage  {
-  constructor(private router: Router) { }
+ username:any;
+ password:any;
+  constructor(private router: Router,private storage: Storage) {this.storage.create(); }
 
-
-  logIn() {
-    // Navigate to home page after successful login
-    this.router.navigate(['/home']);
+  async logIn() {
+    const users = await this.storage['get']('users') || [];
+    const user = users.find((u: { username: any; password: any; }) => u.username === this.username && u.password === this.password);
+    if (user) {
+      this.router.navigate(['/home']);
+    } else {
+      console.log('Invalid username or password');
+    }
+    
   }
 
   signUp() {
-    // Navigate to home page after successful login
     this.router.navigate(['/signup']);
   }
 
