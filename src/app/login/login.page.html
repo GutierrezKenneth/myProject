@@ -1,22 +1,14 @@
 
-<ion-content>
+<ion-content [fullscreen]="true">
 
 <h1>Welcome!</h1>
 <h3>Log in to your account</h3>
 
-<div class="div-info">
-
-    
+<div class="div-info"> 
     <ion-input placeholder="Username:" [(ngModel)]="username"></ion-input>
     <ion-input placeholder="Password:" type="Password" [(ngModel)]="password"></ion-input>
-     
     <ion-button class="loginbtn" (click)="logIn()">Log In</ion-button>
     <ion-button class="signupbtn"  (click)="signUp()">Sign Up</ion-button>
 </div>
-
-
-  
-
-    
   
 </ion-content>
