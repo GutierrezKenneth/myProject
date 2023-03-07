@@ -1,13 +1,12 @@
 <ion-content>
   <h1>Create Account!</h1>
   <h3>Sign up to get start</h3>
-  <h1 class="appName">E - Tanim</h1>
   <div class="div-info">
       
-    <ion-input placeholder="Username" type="text" [(ngModel)]="username"></ion-input>
+    <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
     <ion-input placeholder="Password:" type="Password"[(ngModel)]="password"></ion-input>
     <ion-input placeholder="Confirm Password:" type="Password"[(ngModel)]="confirmPassword"></ion-input>
-    <ion-button expand="block" (click)="signUp()" >Sign Up</ion-button>
-    <ion-button expand="block" (click)="logIn()"color="light">Log In</ion-button> 
+    <ion-button class="loginbtn"  (click)="signUp()">Sign Up</ion-button>
+    <ion-button class="signupbtn" (click)="logIn()">Log In</ion-button> 
   </div>
 </ion-content>

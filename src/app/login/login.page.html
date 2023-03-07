@@ -2,18 +2,16 @@
 <ion-content>
 
 <h1>Welcome!</h1>
-<h3>Log in to continue</h3>
-
-<h1 class="appName">E - Tanim</h1>
-
+<h3>Log in to your account</h3>
 
 <div class="div-info">
+
     
-    <ion-input placeholder="Username" type="text" [(ngModel)]="username"></ion-input>
+    <ion-input placeholder="Username:" [(ngModel)]="username"></ion-input>
     <ion-input placeholder="Password:" type="Password" [(ngModel)]="password"></ion-input>
      
-    <ion-button expand="block" (click)="logIn()">Log In</ion-button>
-    <ion-button expand="block" (click)="signUp()" color="light">Sign Up</ion-button>
+    <ion-button class="loginbtn" (click)="logIn()">Log In</ion-button>
+    <ion-button class="signupbtn"  (click)="signUp()">Sign Up</ion-button>
 </div>
 
 

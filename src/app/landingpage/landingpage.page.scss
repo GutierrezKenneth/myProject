@@ -2,62 +2,72 @@
   ion-content {
     //--background: linear-gradient(180deg, #4F9B24 25%, #fff 75%);
     --background: none;
-    background-image: url('/assets/images/bg.jpg');
+    background-image: url('/assets/images/homepage.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   
 
-  .landing-Div {
+  .titleDiv {
     max-width: 400px;
     position: relative;
-    top: 50%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .buttonDiv {
+    max-width: 400px;
+    position: relative;
+    top: 30%;
     left: 50%;
     transform: translate(-50%,-50%);
   }
 
   h1{
-    font-style: italic;
     font-family: cursive;
-    color: #5D9C59;
-    margin-left: 60px;
-  }
-
-  p{
-    color: black;
-    font-size: 14px;
-    margin-left: 30px;
+    color: #eaecea;
+    margin-left: 20px;
+    font-size: 50px;
   }
 
   .loginbtn{
-    margin-left: 70px;
-    margin-right: 20px;
-  }
-  
- 
-  ion-button {
-    width: 100px;
-    height: 30px;
-    --background: #93e9be;
-    --background-hover: #93e9be;
+    --background: #b3afab;
     --background-activated: #93e9be;
-    --background-focused: #93e9be;
-  
-    --color: rgb(255, 255, 255);
-  
     --border-radius: 20px;
-    --border-color: #93e9be;
+    --border-color: #b3afab;
     --border-style: solid;
     --border-width: 1px;
-  
-    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
-  
-    --ripple-color: deeppink;
-  
     --padding-top: 10px;
     --padding-bottom: 10px;
   }
+ 
+  .signupbtn{
+   
+
+    --background: #da8a36;
+    --background-activated: #93e9be;
+
+    --border-radius: 20px;
+    --border-color: #da8a36;
+    --border-style: solid;
+    --border-width: 1px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
+
+  ion-button {
+    margin-left: 60px;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 40px;
+    
+  }
+
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 ion-content {
     //--background: linear-gradient(180deg, #4F9B24 25%, #fff 75%);
     --background: none;
-    background-image: url('/assets/images/bg.jpg');
+    background-image: url('/assets/images/login.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,7 +31,7 @@ h3{
 
 ion-input{
   text-indent: 10px;
-color: #5D9C59;
+color: #0c0c0c;
 border: 1px solid black;
 height: 50px;
 margin-bottom: 5px;
@@ -42,29 +42,34 @@ border-radius: 10px;
 }
 
 
-ion-button {
-  margin-left: 35PX;
-  width: 300px;
-  height: 30px;
-  --background: #93e9be;
-  --background-hover: #93e9be;
+.loginbtn{
+
+  --background: #da8a36;
   --background-activated: #93e9be;
-  --background-focused: #93e9be;
-
-  --color: rgb(255, 255, 255);
-
-  --border-color: #93e9be;
+  --border-radius: 20px;
+  --border-color: #da8a36;
   --border-style: solid;
   --border-width: 1px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 
-  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+ 
+}
 
-  --ripple-color: deeppink;
-
+.signupbtn{
+  --background: #b3afab;
+  --background-activated: #93e9be;
+  --border-radius: 20px;
+  --border-color: #b3afab;
+  --border-style: solid;
+  --border-width: 1px;
   --padding-top: 10px;
   --padding-bottom: 10px;
 }
 
-.appName{
-  text-align: center;
+ion-button {
+  margin-left: 60px;
+  margin-bottom: 10px;
+  width: 250px;
+  height: 40px;
 }
