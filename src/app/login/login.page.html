@@ -4,11 +4,18 @@
 <h1>Welcome!</h1>
 <h3>Log in to your account</h3>
 
+ 
 <div class="div-info"> 
-    <ion-input placeholder="Username:" [(ngModel)]="username"></ion-input>
-    <ion-input placeholder="Password:" type="Password" [(ngModel)]="password"></ion-input>
+    <ion-input placeholder="Username:" [(ngModel)]="username" (ionFocus)="onUsernameFocus()"></ion-input>
+    <ion-text class="error" color="danger" *ngIf="usernameTouched"><b>Please enter username!</b></ion-text>
+
+    <ion-input placeholder="Password:" type="Password" [(ngModel)]="password" (ionFocus)="onPasswordFocus()"></ion-input>
+    <ion-text class="error"  color="danger" *ngIf="passwordTouched"><b>Please enter password!</b></ion-text>
+
     <ion-button class="loginbtn" (click)="logIn()">Log In</ion-button>
     <ion-button class="signupbtn"  (click)="signUp()">Sign Up</ion-button>
 </div>
+
+
   
 </ion-content>

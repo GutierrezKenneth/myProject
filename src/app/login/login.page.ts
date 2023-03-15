@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -10,22 +11,83 @@ import { Storage } from '@ionic/storage-angular';
 export class LoginPage  {
  username:any;
  password:any;
-  constructor(private router: Router,private storage: Storage) {this.storage.create(); }
+usernameTouched = false;
+passwordTouched = false;
+  constructor(private router: Router,private storage: Storage, private alertController: AlertController) {this.storage.create(); }
 
-  async logIn() {
-    const users = await this.storage['get']('users') || [];
-    const user = users.find((u: { username: any; password: any; }) => u.username === this.username && u.password === this.password);
-    if (user) {
-      this.router.navigate(['/home']);
-    } else {
-      console.log('Invalid username or password');
+  ngOnInit() {
+    this.username = '';
+    this.password = '';
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Important message',
+      message: 'Invalid password or Username!',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  onUsernameFocus() {
+    if(this.username == ''){
+      this.usernameTouched = true;
     }
+
+    else{
+      this.usernameTouched = false;
+    }
+
+  }
+
+  onPasswordFocus() {
+    if(this.password == '')
+    {
+      this.passwordTouched = true;
+    }
+
+    else{
+      this.passwordTouched = false;
+    }
+      
+  }
+
+  
+  async logIn() {
+    if(this.username == ''){
+      this.onUsernameFocus();
+    }
+    if(this.password== '')
+    {
+      this.onPasswordFocus();
+    }
+    
+    else{
+      const users = await this.storage['get']('users') || [];
+      const user = users.find((u: { username: any; password: any; }) => u.username === this.username && u.password === this.password);
+        if (user) {
+          this.username ='';
+          this.password = '';
+          this.router.navigate(['/home']);
+       } else {
+          this.presentAlert();
+        }
+    }
+    
     
   }
 
   signUp() {
     this.router.navigate(['/signup']);
   }
+
+
+
+
+
+
 
 
 }
