@@ -4,13 +4,13 @@
   <div class="div-info">
       
     <ion-input placeholder="Username" [(ngModel)]="username" (ionFocus)="onUsernameFocus()"></ion-input>
-    <ion-text class="error" color="danger" *ngIf="usernameTouched"><b>Please enter username!</b></ion-text>
+    <ion-text class="error" color="danger" *ngIf="usernameTouched"><b>Please enter username</b></ion-text>
 
     <ion-input placeholder="Password:" type="Password"[(ngModel)]="password" (ionFocus)="onPasswordFocus()"></ion-input>
     <ion-text class="error" color="danger" *ngIf="passwordTouched"><b>Please enter password 8 - 16 letter length</b></ion-text>
 
     <ion-input placeholder="Confirm Password:" type="Password"[(ngModel)]="confirmPassword" (ionFocus)="onConfirmPasswordFocus()"></ion-input>
-    <ion-text class="error" color="danger" *ngIf="confirmPasswordTouched"><b>Please enter the same password!</b></ion-text>
+    <ion-text class="error" color="danger" *ngIf="confirmPasswordTouched"><b>Please enter the same password</b></ion-text>
     <ion-button class="loginbtn"  (click)="signUp()">Sign Up</ion-button>
     <ion-button class="signupbtn" (click)="logIn()">Log In</ion-button> 
   </div>
