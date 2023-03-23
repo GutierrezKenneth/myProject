@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { AlertController } from '@ionic/angular';
+import { SharedService } from '../shared.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -9,13 +12,15 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage  {
- username:any;
- password:any;
+ public username:any;
+ public password:any;
+ public pname: any;
 usernameTouched = false;
 passwordTouched = false;
-  constructor(private router: Router,private storage: Storage, private alertController: AlertController) {this.storage.create(); }
+  constructor(private router: Router,private storage: Storage, private alertController: AlertController, private shared: SharedService) {this.storage.create(); }
 
   ngOnInit() {
+
     this.username = '';
     this.password = '';
   }
@@ -68,12 +73,18 @@ passwordTouched = false;
       const users = await this.storage['get']('users') || [];
       const user = users.find((u: { username: any; password: any; }) => u.username === this.username && u.password === this.password);
         if (user) {
+          this.pname = this.username;
+          this.shared.setUsername(this.pname);
           this.username ='';
           this.password = '';
-          this.router.navigate(['/home']);
+         this.router.navigate(['/home']);
+        
+
+         
+  
        } else {
           this.presentAlert();
-        }
+        } 
     }
     
     

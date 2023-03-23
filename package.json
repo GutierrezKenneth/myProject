@@ -30,6 +30,7 @@
     "@ionic/pwa-elements": "^3.1.1",
     "@ionic/storage": "^3.0.6",
     "@ionic/storage-angular": "^3.0.6",
+    "date-fns": "^2.29.3",
     "firebase": "^9.17.2",
     "ionicons": "^6.0.3",
     "rxjs": "~7.5.0",
