@@ -1,12 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Main Page</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content>
-  <h1>Welcome {{username}} to the Planting Information app</h1>
   <div class="ion-text-center ion-margin-top">
-    <h1>{{ currentTime }}</h1>
+    <h1 class="timetext">{{ currentTime }}</h1>
   </div>
+  <h1 class="text">Hello {{username}}!</h1>
+   <h1 class="welcome"> Welcome</h1>
+    <h1 class="to"> to the </h1>
+    <h1 class="plant">Planting Information </h1>
+      <h1 class="app">Application</h1> 
+
+
+  <ion-tabs>
+    <ion-router-outlet></ion-router-outlet>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button (click) = "profile()" tab="profile">
+        <ion-icon name="person"></ion-icon>
+        Profile
+      </ion-tab-button>
+      <ion-tab-button (click) = "settings()"  tab="settings">
+        <ion-icon name="settings"></ion-icon>
+        Settings
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+
+  
 </ion-content>

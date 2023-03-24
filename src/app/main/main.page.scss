@@ -5,11 +5,42 @@ ion-content {
     background-repeat: no-repeat;
     background-size: cover;
   }
-
   h1{
+    color: #4dc444;
+    font-size: 32px;
+    font-family: cursive;
+    font-weight: 700;
+  }
+
+
+  .timetext{
     color: #040404;
     margin-top: 15%;
     margin-left: 10px;
-    font-size: 32px;
-    font-weight: 700;
+    font-weight: 800;
 }
+
+.text{
+  color: #040404;
+  margin-top: 30px;
+  margin-left: 90px;
+
+}
+
+.welcome{
+  margin-top: 30px;
+  margin-left: 40px;
+}
+
+.to{
+  margin-left: 140px;
+}
+
+.plant{
+  margin-left: 30px;
+}
+
+.app{
+  margin-left: 160px;
+}
+

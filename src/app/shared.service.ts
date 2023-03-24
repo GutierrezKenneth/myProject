@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { da } from 'date-fns/locale';
 
 @Injectable({
   providedIn: 'root'

@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Settings</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
 
-</ion-content>
+  <ion-content>
+
+    <ion-tabs>
+      <ion-router-outlet></ion-router-outlet>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button (click) = "main()" tab="home">
+          <ion-icon name="home"></ion-icon>
+          Home
+        </ion-tab-button>
+        <ion-tab-button (click) = "profile()" tab="profile">
+          <ion-icon name="person"></ion-icon>
+          Profile
+        </ion-tab-button>
+        <ion-tab-button tab="settings">
+          <ion-icon name="settings"></ion-icon>
+          Settings
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+
+    <ion-button class="loginbtn" (click)="logout()">Log out</ion-button> 
+
+  </ion-content>
+ 
+    
+
+

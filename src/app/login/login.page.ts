@@ -77,7 +77,7 @@ passwordTouched = false;
           this.shared.setUsername(this.pname);
           this.username ='';
           this.password = '';
-         this.router.navigate(['/home']);
+         this.router.navigate(['/main']);
         
 
          

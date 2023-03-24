@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { format } from 'date-fns';
 import { SharedService } from '../shared.service';
+import { Router } from '@angular/router';
 
 
 
@@ -16,7 +17,7 @@ export class MainPage implements OnInit {
   public username:any;
 
 
-  constructor(private shared: SharedService) {
+  constructor(private shared: SharedService, private router: Router) {
      // Set the initial value of the current s
 
      this.username = this.shared.getUsername();  
@@ -32,6 +33,14 @@ export class MainPage implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+
+  profile(){
+    this.router.navigate(['/profile']);
+  }
+  settings(){
+    this.router.navigate(['/settings']);
   }
 
 }

@@ -6,3 +6,25 @@ ion-content {
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  ion-input{
+    text-indent: 10px;
+  color: #0c0c0c;
+  border: 1px solid black;
+  height: 50px;
+  margin-bottom: 5px;
+  width: 300px;
+  margin-left: 35PX;
+  background-color: rgba(246, 246, 246, 0.497);
+  border-radius: 10px;
+  }
+
+
+  .loginbtn{
+    margin-left: 10%;
+    margin-top: 140%;
+    width: 300px;
+    --border-radius: 20px;
+
+  }
+  
