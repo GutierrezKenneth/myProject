@@ -13,6 +13,7 @@ export class SignupPage implements OnInit {
   username:any;
   password:any;
   confirmPassword: any;
+  profileImage: any;
   usernameTouched = false;
   passwordTouched = false;
   confirmPasswordTouched = false;
@@ -23,6 +24,7 @@ export class SignupPage implements OnInit {
     this.username = '';
     this.password = '';
     this.confirmPassword = '';
+    this.profileImage="/assets/icon/profile.jpg"
   }
 
   async presentAlert() {
@@ -149,6 +151,7 @@ export class SignupPage implements OnInit {
      users.push({
        username: this.username,
        password: this.password,
+       profileImage: this.profileImage,
      });
      await this.storage.set('users', users);
      this.router.navigate(['/login']);

@@ -2,9 +2,9 @@
 
 <ion-content>
 
-
-
-
+    <img class="profile" src ="./assets/icon/profile.png"/>
+    
+  
 
   <ion-tabs>
     <ion-router-outlet></ion-router-outlet>
@@ -23,6 +23,25 @@
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
-  
+
+  <ion-button class="upload">Upload Profile</ion-button>
+
+
+<div>
+  <ion-item>
+    <img src="./assets/icon/user.png" />
+    <ion-input class="info"  disabled="true">{{username}}</ion-input>
+  </ion-item>
+   
+<br>
+  <ion-item>
+     <img src="./assets/icon/padlock.png" />
+    <ion-input class="info" placeholder="{{password}}"[(ngModel)]="newPassword"></ion-input>
+  </ion-item>
+</div>
+
+<ion-button class="edit" (click) = "editInfo()">Change Password</ion-button>
+   
+
 
 </ion-content>

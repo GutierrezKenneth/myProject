@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
   username: any;
+  password: any;
 
   constructor() { }
 
@@ -12,8 +13,16 @@ export class SharedService {
     this.username = data;
   }
 
+  setPassword(data:any){
+    this.password = data;
+  }
+
   getUsername(){
     return this.username;
+  }
+
+  getPassword(){
+    return this.password;
   }
 
 }
