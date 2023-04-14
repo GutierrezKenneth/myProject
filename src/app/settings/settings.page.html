@@ -20,7 +20,21 @@
       </ion-tab-bar>
     </ion-tabs>
 
-    <ion-button class="loginbtn" (click)="logout()">Log out</ion-button> 
+    <ion-list>
+      <ion-item>
+        <ion-icon name="finger-print-outline"></ion-icon>
+        <ion-label>&nbsp;&nbsp;&nbsp;&nbsp;     &nbsp;Biometrics Log in</ion-label>
+        <ion-toggle [checked] = "isBiometricsEnabled" ></ion-toggle>
+    </ion-item>
+      <ion-item (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+          <ion-label>&nbsp;&nbsp;&nbsp;&nbsp;     &nbsp;Log out</ion-label>
+      </ion-item>
+  </ion-list>
+
+    
+  
+
 
   </ion-content>
  
