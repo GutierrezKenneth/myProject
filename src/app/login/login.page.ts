@@ -22,12 +22,25 @@ import { tr } from 'date-fns/locale';
   usernameTouched = false;
   passwordTouched = false;
   public sessionTest:any
+  public hideBiometrics = false;
+  public getTest:any;
     constructor(private router: Router,private storage: Storage, private alertController: AlertController, private shared: SharedService,private loadingController: LoadingController) {this.storage.create(); }
 
     ngOnInit() {
 
       this.username = '';
       this.password = '';
+
+      this.getTest = sessionStorage.getItem("userToggle")
+      if(this.getTest == "true"){
+        this.hideBiometrics = true;
+      }else{
+       this.hideBiometrics = false
+      }
+
+      
+
+
     }
 
 
@@ -86,20 +99,23 @@ import { tr } from 'date-fns/locale';
             this.getPass = this.password;
             this.shared.setUsername(this.pname);
             this.shared.setPassword(this.getPass);
-            this.sessionTest = sessionStorage.getItem("username");
+            
+            this.getTest = sessionStorage.getItem("username");
 
-            if( this.sessionTest!= "") {
-              this.username ='';
-              this.password = '';
-              this.router.navigate(['/main']);
+            if(this.getTest != this.username){
+              sessionStorage.setItem("userToggle" ,"false")
             }
-            else{
+        
+            
               sessionStorage.setItem("username",this.username)
               sessionStorage.setItem("password", this.password)
               this.username ='';
               this.password = '';
               this.router.navigate(['/main']);
-            }
+
+
+              
+           
            
           
           

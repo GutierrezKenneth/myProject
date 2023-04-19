@@ -13,10 +13,30 @@ export class SettingsPage implements OnInit {
 
   public hasBiometrics: boolean = false;
   public isBiometricsEnabled: boolean = false;
+  public getTest:any;
   constructor(public router: Router) { }
 
   ngOnInit() {
+
+    this.getTest = sessionStorage.getItem("userToggle")
+
+    if(this.getTest == "true"){
+      this.isBiometricsEnabled = true;
+      this.enableBiometrics();
+    }else{
+      this.isBiometricsEnabled = false;
+      this.disableBiometrics();
+    }
+    
+    this.initiateBiometrics();
+
   }
+
+  change(){
+   this.getTest = this.isBiometricsEnabled;
+   sessionStorage.setItem("userToggle",this.getTest)
+  }
+
 
   async initiateBiometrics(){
     const result = await NativeBiometric.isAvailable();
