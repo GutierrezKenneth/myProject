@@ -154,7 +154,7 @@ export class SignupPage implements OnInit {
        profileImage: this.profileImage,
      });
      await this.storage.set('users', users);
-     this.router.navigate(['/login']);
+     this.router.navigate(['login']);
    }
 
      

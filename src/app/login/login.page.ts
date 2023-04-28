@@ -105,23 +105,11 @@ import { tr } from 'date-fns/locale';
             if(this.getTest != this.username){
               sessionStorage.setItem("userToggle" ,"false")
             }
-        
-            
               sessionStorage.setItem("username",this.username)
               sessionStorage.setItem("password", this.password)
               this.username ='';
               this.password = '';
               this.router.navigate(['/main']);
-
-
-              
-           
-           
-          
-          
-
-          
-    
         } else {
             this.presentAlert();
           }
@@ -144,8 +132,8 @@ import { tr } from 'date-fns/locale';
     const verified = await NativeBiometric.verifyIdentity({
       reason: "For easy log in",
       title: "Log in",
-      subtitle: "Maybe add subtitle here?",
-      description: "Maybe a description too?",
+      subtitle: "Finger print biometrics",
+      description: "Put your registered finger print on sensor",
     })
       .then(() => true)
       .catch(() => false);
@@ -163,13 +151,5 @@ import { tr } from 'date-fns/locale';
     }
 
   }
-
-
-
-
-
-
-
-
 
   }

@@ -54,14 +54,14 @@ export class SettingsPage implements OnInit {
   }
 
   logout(){
-    this.router.navigate(['/landingpage']);
+    this.router.navigate(['landingpage']);
   }
   
   main(){
-    this.router.navigate(['/main']);
+    this.router.navigate(['main']);
   }
   profile(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['profile']);
   }
 
   enableBiometrics(){

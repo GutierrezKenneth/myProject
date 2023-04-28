@@ -37,10 +37,10 @@ export class MainPage implements OnInit {
 
 
   profile(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['profile']);
   }
   settings(){
-    this.router.navigate(['/settings']);
+    this.router.navigate(['settings']);
   }
 
 }
