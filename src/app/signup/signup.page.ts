@@ -24,7 +24,7 @@ export class SignupPage implements OnInit {
     this.username = '';
     this.password = '';
     this.confirmPassword = '';
-    this.profileImage="/assets/icon/profile.jpg"
+    this.profileImage="/assets/icon/profile.png"
   }
 
   async presentAlert() {

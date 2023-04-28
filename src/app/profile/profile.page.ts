@@ -58,7 +58,13 @@ export class ProfilePage implements OnInit {
     if(userIndex >=0){
       const profileImage = users[userIndex].profileImage;
 
-      this.getProfile = profileImage;
+
+      if(profileImage == "/assets/icon/profile.png"){
+        this.getProfile = "/assets/icon/profile.png";
+      }
+      else{
+        this.getProfile = profileImage;
+      }
     }
 
   }
