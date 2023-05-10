@@ -13,14 +13,24 @@ export class SignupPage implements OnInit {
   username:any;
   password:any;
   confirmPassword: any;
+  fName:any;
+  lName:any;
+  pNumber:any;
   profileImage: any;
   usernameTouched = false;
   passwordTouched = false;
   confirmPasswordTouched = false;
+  fNameTouched = false;
+  lNameTouched = false;
+  pNumberTouched = false;
+
 
   constructor( public router: Router,private storage: Storage, private alertController: AlertController) {this.storage.create();}
  
   ngOnInit(){
+    this.fName = '';
+    this.lName = '';
+    this.pNumber = '';
     this.username = '';
     this.password = '';
     this.confirmPassword = '';
@@ -107,6 +117,44 @@ export class SignupPage implements OnInit {
       
   }
 
+  onfNameFocus() {
+    if(this.fName == '')
+    {
+      this.fNameTouched = true;
+    }
+
+    else{
+      this.fNameTouched = false;
+    }
+      
+  }
+
+  onlNameFocus() {
+    if(this.lName == '')
+    {
+      this.lNameTouched = true;
+    }
+
+    else{
+      this.lNameTouched = false;
+    }
+      
+  }
+
+  onpNumberFocus() {
+    if(this.pNumber == '')
+    {
+      this.pNumberTouched = true;
+    }
+
+    else{
+      this.pNumberTouched = false;
+    }
+      
+  }
+
+
+
 
 
 
@@ -127,7 +175,22 @@ export class SignupPage implements OnInit {
     {
       this.onConfirmPasswordFocus();
     }
+
+    if(this.fName == '')
+    {
+      this.onfNameFocus();
+    }
+
+    if(this.lName == '')
+    {
+      this.onlNameFocus();
+    }
     
+    if(this.pNumber == '')
+    {
+      this.onpNumberFocus();
+    }
+
    else{
     const users = await this.storage.get('users') || [];
      if (users.find((u: { username: any; }) => u.username === this.username)) {
@@ -148,13 +211,17 @@ export class SignupPage implements OnInit {
         this.presentAlert();
        return;
      }
-     users.push({
-       username: this.username,
-       password: this.password,
-       profileImage: this.profileImage,
-     });
-     await this.storage.set('users', users);
-     this.router.navigate(['login']);
+      users.push({
+        username: this.username,
+        password: this.password,
+        firstname: this.fName,
+        lastname: this.lName,
+        phonenumber: this.pNumber,
+        profileImage: this.profileImage,
+      });
+      await this.storage.set('users', users);
+      this.router.navigate(['login']);
+     
    }
 
      

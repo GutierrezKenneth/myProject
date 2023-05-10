@@ -19,10 +19,8 @@ ion-content {
 }
 
 .text{
-  color: #3ac568;
+  color: #020202;
   margin-top: 30px;
-  margin-left: 90px;
-
 }
 
 .welcome{
@@ -63,14 +61,12 @@ h2{
   font-size: 17px;
 }
 
-.plant2{
-  --background: url('/assets/images/plant2.jpg') no-repeat center center / cover;
-}
+
 
 ion-card-content{
   margin-top: 0%;
 }
 
-.plant3{
-  --background: url('/assets/images/plant3.jpg') no-repeat center center / cover;
+.ion-text-center{
+  margin-top: 40%;
 }

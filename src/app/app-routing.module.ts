@@ -6,11 +6,7 @@ const routes: Routes = [
     path: 'landingpage',
     loadChildren: () => import('./landingpage/landingpage.module').then( m => m.LandingpagePageModule)
   },
-  {
-    path: '',
-    redirectTo: 'landingpage',
-    pathMatch: 'full'
-  },
+  
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -35,6 +31,10 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
   },
 ];
 

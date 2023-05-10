@@ -5,7 +5,6 @@
   import { SharedService } from '../shared.service';
   import { LoadingController } from '@ionic/angular';
   import { BiometryType, NativeBiometric } from "capacitor-native-biometric";
-import { tr } from 'date-fns/locale';
 
 
 
@@ -27,7 +26,7 @@ import { tr } from 'date-fns/locale';
     constructor(private router: Router,private storage: Storage, private alertController: AlertController, private shared: SharedService,private loadingController: LoadingController) {this.storage.create(); }
 
     ngOnInit() {
-
+      
       this.username = '';
       this.password = '';
 
@@ -37,14 +36,8 @@ import { tr } from 'date-fns/locale';
       }else{
        this.hideBiometrics = false
       }
-
-      
-
-
     }
 
-
-  
 
     async presentAlert() {
       const alert = await this.alertController.create({
@@ -119,7 +112,7 @@ import { tr } from 'date-fns/locale';
     }
 
     signUp() {
-      this.router.navigate(['/signup']);
+      this.router.navigate(['signup']);
     }
 
     async biometrics(){

@@ -20,7 +20,14 @@ import { Capacitor } from '@capacitor/core';
 export class ProfilePage implements OnInit {
   public username: any;
   public password: any;
+  public fName:any;
+  public lName:any;
+  public pNumber:any;
   public newPassword:any;
+  public newfName:any;
+  public newlName:any;
+  public newpNumber:any;
+
   public getPicture:any;
   public getProfile:any;
 
@@ -34,18 +41,39 @@ export class ProfilePage implements OnInit {
   {
     this.username = this.shared.getUsername();
     this.password = this.shared.getPassword();
-    this.newPassword = this.shared.getPassword();
+    // this.newPassword = this.shared.getPassword();
   }
 
    ngOnInit() {
+
+    this.getInfo();
+
     Camera.requestPermissions({permissions:['photos']})
     this.loadProfile();
+  }
+
+  async getInfo(){
+    const users = await this.storage.get('users') || [];
+    const userIndex = users.findIndex((u: { username: any; password: any; }) => u.username === this.username && u.password === this.password);
+    if(userIndex >=0){
+      const fname = users[userIndex].firstname;
+      const lname = users[userIndex].lastname;
+      const pnumber = users[userIndex].phonenumber;
+      const password = users[userIndex].password;
+      const username = users[userIndex].username;
+
+     this.newfName = fname;
+     this.newlName = lname;
+     this.newpNumber = pnumber;
+     this.newPassword = password;
+     this.username = username;
+    }
   }
 
 
   async userUpdateAlert() {
     const loading = await this.loadingController.create({
-      message: 'Changing Password!',
+      message: 'Changing Information!',
       duration: 2000
     });
     await loading.present();
@@ -122,11 +150,13 @@ export class ProfilePage implements OnInit {
       // Update the user object with new data
     users[userIndex] = {
       ...users[userIndex],
+      firstname: this.newfName,
+      lastname: this.newlName,
+      phonenumber: this.newpNumber,
       password: this.newPassword
     };
 
     await this.storage['set']('users', users);
-    this.shared.setPassword(this.newPassword);
     this.userUpdateAlert();
     this.router.navigate(['/profile']);
 

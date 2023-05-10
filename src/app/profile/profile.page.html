@@ -3,7 +3,7 @@
 <ion-content>
 
 
-    <div id="profile-image-container">
+    <div id="profile-image-container" class="container ion-text-center" >
       <img class="profile" src="{{getProfile}}"/>
     </div>
     
@@ -27,24 +27,47 @@
     </ion-tab-bar>
   </ion-tabs>
 
+  <div class="container ion-text-center">
+
   <ion-button class="upload" (click) = "takePhoto()">Upload Profile</ion-button>
-
-
-<div>
-  <ion-item>
+  
+  <ion-item class="ion-text-center">
     <img src="./assets/icon/user.png" />
-    <ion-input class="info"  disabled="true">{{username}}</ion-input>
+   <ion-input class="info" type="name"[(ngModel)]="newfName"></ion-input>
+ </ion-item>
+   
+<br>
+
+<ion-item class="ion-text-center">
+  <img src="./assets/icon/user.png" />
+ <ion-input class="info" type="name"[(ngModel)]="newlName"></ion-input>
+</ion-item>
+ 
+<br>
+
+  <ion-item class="ion-text-center">
+    <img src="./assets/icon/telephone.png" />
+   <ion-input class="info" type="number"[(ngModel)]="newpNumber"></ion-input>
+ </ion-item>
+   
+<br>
+
+  <ion-item class="ion-text-center">
+    <img src="./assets/icon/id-card.png" />
+    <ion-input class="info"  disabled="true" [(ngModel)]="username" ></ion-input>
   </ion-item>
    
 <br>
-  <ion-item>
+
+  <ion-item class="ion-text-center">
      <img src="./assets/icon/padlock.png" />
-    <ion-input class="info" placeholder="{{password}}"[(ngModel)]="newPassword"></ion-input>
+    <ion-input class="info" type="Password"[(ngModel)]="newPassword"></ion-input>
   </ion-item>
-</div>
+  
 
-<ion-button class="edit" (click) = "editInfo()">Change Password</ion-button>
+
+<ion-button class="edit" (click) = "editInfo()">Save Changes</ion-button>
    
-
+</div>
 
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { NativeBiometric } from 'capacitor-native-biometric';
+import { NativeBiometric,BiometryType } from 'capacitor-native-biometric';
+
 import { tr } from 'date-fns/locale';
 
 @Component({
@@ -32,9 +33,28 @@ export class SettingsPage implements OnInit {
 
   }
 
-  change(){
+ async change(){
+    const result = await NativeBiometric.isAvailable();
+
+    if(!result.isAvailable) return;
+
+    const isFaceID = result.biometryType == BiometryType.FACE_ID;
+
+    const verified = await NativeBiometric.verifyIdentity({
+      reason: "For easy log in",
+      title: "Log in",
+      subtitle: "Finger print biometrics",
+      description: "Put your registered finger print on sensor",
+    })
+      .then(() => true)
+      .catch(() => false);
+  if(!verified) return;
+  
+  else{  
    this.getTest = this.isBiometricsEnabled;
    sessionStorage.setItem("userToggle",this.getTest)
+  }
+
   }
 
 
